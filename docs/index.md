@@ -29,6 +29,16 @@ layout: default
   <a class="port-btn" href="{{ '/reproducibility' | relative_url }}">Reproducibility</a>
 </div>
 
+<style>
+.page-content img{
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.06);
+  margin: .5rem 0 1rem 0;
+}
+</style>
+
 ---
 
 ## Introduction & Project Objective
@@ -48,6 +58,11 @@ The goal of this project was to determine if hospital performance—specifically
 **Interpretation:** Because the p-value is significantly higher than 0.05, we fail to reject the null hypothesis.  
 **Conclusion:** There is no statistically significant difference in quality ratings between “Acute Care” and “Critical Access” hospitals. Operational quality is consistent across these categories, suggesting that a hospital’s primary designation does not inherently limit its quality potential.
 
+### Visual: Star ratings by hospital type
+![Hospital Type vs Star Rating Boxplot]({{ '/assets/img/01_boxplot_hospital_type_vs_rating.png' | relative_url }})
+
+![Average Star Rating by Hospital Type]({{ '/assets/img/05_avg_rating_by_hospital_type.png' | relative_url }})
+
 ## B. The Wealth-Quality Gap (Chi-Square)  
 **Results:** P-Value: 0.0000.  
 **Interpretation:** The test showed a highly significant association between income groups and rating groups.  
@@ -58,8 +73,17 @@ The goal of this project was to determine if hospital performance—specifically
 **Interpretation:** While community income is a standalone factor, when modeled alongside population size, population density becomes the dominant predictor of readmission failures.  
 **Conclusion:** Large-scale hospitals in densely populated areas face significantly higher counts of readmission failures. This suggests that the volume of patients and the complexity of urban discharge planning are major clinical bottlenecks.
 
+### Visual: Income and readmission failures
+![Income Impact on Readmission Failures]({{ '/assets/img/02_income_predicts_readmission_failures.png' | relative_url }})
+
+![Income vs Failures by Hospital Type]({{ '/assets/img/04_income_vs_failures_by_hospital_type.png' | relative_url }})
+
 ## Visual Highlights
-**Correlation Matrix:** Revealed a moderate negative correlation (-0.34) between star ratings and readmission failures, confirming that readmission performance is a primary component of a hospital’s reputation.  
+**Correlation Matrix:** Revealed a moderate negative correlation (-0.34) between star ratings and readmission failures, confirming that readmission performance is a primary component of a hospital’s reputation.
+
+### Visual: Correlation matrix
+![Correlation Matrix: Clinical vs. Socioeconomics]({{ '/assets/img/03_correlation_matrix.png' | relative_url }})
+
 **Regression Trend:** The scatter plot visualized a “floor” where hospitals in communities with income below $50,000 had significantly higher clusters of maximum readmission failures (6-7 measures).
 
 ## Final Recommendations (The “So What?”)
