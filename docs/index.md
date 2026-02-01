@@ -43,17 +43,17 @@ The goal of this project was to determine if hospital performance—specifically
 **Multiple Linear Regression:** To quantify the predictive power of income and population size on readmission failures.
 
 ## Key Findings & Interpretation
-# A. Operational Consistency (ANOVA)  
+## A. Operational Consistency (ANOVA)  
 **Results: F-Statistic:** 0.11, P-Value: 0.7376.  
 **Interpretation:** Because the p-value is significantly higher than 0.05, we fail to reject the null hypothesis.  
 **Conclusion:** There is no statistically significant difference in quality ratings between “Acute Care” and “Critical Access” hospitals. Operational quality is consistent across these categories, suggesting that a hospital’s primary designation does not inherently limit its quality potential.
 
-# B. The Wealth-Quality Gap (Chi-Square)  
+## B. The Wealth-Quality Gap (Chi-Square)  
 **Results:** P-Value: 0.0000.  
 **Interpretation:** The test showed a highly significant association between income groups and rating groups.  
 **Conclusion:** High-income communities are disproportionately served by 4-5 star hospitals ($825$ facilities), while low-income communities are served by nearly double the amount of 1-3 star hospitals ($1,040$). This proves that quality is geographically and economically stratified.
 
-# C. Predictive Drivers (Multiple Regression)  
+## C. Predictive Drivers (Multiple Regression)  
 **Results:** R-squared: 0.044, Income Coef: 8.764e-07 ($p=0.341$), Population Coef: 1.381e-05 ($p<0.001$).  
 **Interpretation:** While community income is a standalone factor, when modeled alongside population size, population density becomes the dominant predictor of readmission failures.  
 **Conclusion:** Large-scale hospitals in densely populated areas face significantly higher counts of readmission failures. This suggests that the volume of patients and the complexity of urban discharge planning are major clinical bottlenecks.
