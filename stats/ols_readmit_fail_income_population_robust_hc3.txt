@@ -1,0 +1,28 @@
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:     readmit_fail_count   R-squared:                       0.044
+Model:                            OLS   Adj. R-squared:                  0.043
+Method:                 Least Squares   F-statistic:                     67.20
+Date:                Sun, 01 Feb 2026   Prob (F-statistic):           2.59e-29
+Time:                        04:42:10   Log-Likelihood:                -4854.0
+No. Observations:                3181   AIC:                             9714.
+Df Residuals:                    3178   BIC:                             9732.
+Df Model:                           2                                         
+Covariance Type:                  HC3                                         
+========================================================================================
+                           coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------
+const                    0.3660      0.061      6.044      0.000       0.247       0.485
+community_income      8.764e-07    1.1e-06      0.797      0.426   -1.28e-06    3.03e-06
+community_population  1.381e-05   1.28e-06     10.785      0.000    1.13e-05    1.63e-05
+==============================================================================
+Omnibus:                      862.903   Durbin-Watson:                   1.420
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             1947.053
+Skew:                           1.540   Prob(JB):                         0.00
+Kurtosis:                       5.282   Cond. No.                     1.91e+05
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity robust (HC3)
+[2] The condition number is large, 1.91e+05. This might indicate that there are
+strong multicollinearity or other numerical problems.

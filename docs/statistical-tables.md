@@ -1,0 +1,154 @@
+[Home](./) | [Statistical tables](statistical-tables) | [Datasets](datasets) | [SQL & syntaxes](sql-and-syntaxes) | [Data dictionary](data-dictionary) | [Reproducibility](reproducibility)
+
+
+# Statistical tables
+
+This page contains the core test outputs that back the executive narrative. All values are generated from `data/healthcare_data.csv`.
+
+## ANOVA: star rating by hospital type
+
+```text
+ANOVA: star_rating by hospital_type (Acute Care vs Critical Access)
+
+Group means:
+- Acute Care Hospitals: 3.2494
+- Critical Access Hospitals: 3.2311
+
+F-statistic: 0.1112
+p-value: 0.7388
+n (Acute Care): 2706
+n (Critical Access): 476
+```
+
+## Chi-square: income group × star group
+
+```text
+Chi-square: income_group x star_group
+
+Income median split (median income = 49514)
+
+Contingency table:
+star_group    1-3 stars  4-5 stars
+income_group                      
+High income         766        825
+Low income         1041        550
+
+Chi-square statistic: 96.1480
+Degrees of freedom: 1
+p-value: 1.066062e-22
+
+Odds ratio (High vs Low for 4-5 stars): 2.0385
+95% CI: [1.7675, 2.3510]
+```
+
+## OLS: readmission failures ~ income + population
+
+```text
+OLS Regression Results                            
+==============================================================================
+Dep. Variable:     readmit_fail_count   R-squared:                       0.044
+Model:                            OLS   Adj. R-squared:                  0.043
+Method:                 Least Squares   F-statistic:                     73.31
+Date:                Sun, 01 Feb 2026   Prob (F-statistic):           7.50e-32
+Time:                        04:42:10   Log-Likelihood:                -4854.0
+No. Observations:                3181   AIC:                             9714.
+Df Residuals:                    3178   BIC:                             9732.
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+========================================================================================
+                           coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------
+const                    0.3660      0.058      6.336      0.000       0.253       0.479
+community_income      8.764e-07    9.2e-07      0.952      0.341   -9.28e-07    2.68e-06
+community_population  1.381e-05   1.19e-06     11.645      0.000    1.15e-05    1.61e-05
+==============================================================================
+Omnibus:                      862.903   Durbin-Watson:                   1.420
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             1947.053
+Skew:                           1.540   Prob(JB):                         0.00
+Kurtosis:                       5.282   Cond. No.                     1.91e+05
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 1.91e+05. This might indicate that there are
+strong multicollinearity or other numerical problems.
+```
+
+## OLS (robust SE, HC3)
+
+```text
+OLS Regression Results                            
+==============================================================================
+Dep. Variable:     readmit_fail_count   R-squared:                       0.044
+Model:                            OLS   Adj. R-squared:                  0.043
+Method:                 Least Squares   F-statistic:                     67.20
+Date:                Sun, 01 Feb 2026   Prob (F-statistic):           2.59e-29
+Time:                        04:42:10   Log-Likelihood:                -4854.0
+No. Observations:                3181   AIC:                             9714.
+Df Residuals:                    3178   BIC:                             9732.
+Df Model:                           2                                         
+Covariance Type:                  HC3                                         
+========================================================================================
+                           coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------
+const                    0.3660      0.061      6.044      0.000       0.247       0.485
+community_income      8.764e-07    1.1e-06      0.797      0.426   -1.28e-06    3.03e-06
+community_population  1.381e-05   1.28e-06     10.785      0.000    1.13e-05    1.63e-05
+==============================================================================
+Omnibus:                      862.903   Durbin-Watson:                   1.420
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             1947.053
+Skew:                           1.540   Prob(JB):                         0.00
+Kurtosis:                       5.282   Cond. No.                     1.91e+05
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity robust (HC3)
+[2] The condition number is large, 1.91e+05. This might indicate that there are
+strong multicollinearity or other numerical problems.
+```
+
+## OLS: readmission failures ~ income only
+
+```text
+OLS Regression Results                            
+==============================================================================
+Dep. Variable:     readmit_fail_count   R-squared:                       0.003
+Model:                            OLS   Adj. R-squared:                  0.003
+Method:                 Least Squares   F-statistic:                     10.57
+Date:                Sun, 01 Feb 2026   Prob (F-statistic):            0.00116
+Time:                        04:42:10   Log-Likelihood:                -4920.4
+No. Observations:                3181   AIC:                             9845.
+Df Residuals:                    3179   BIC:                             9857.
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+====================================================================================
+                       coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------------
+const                0.6232      0.054     11.435      0.000       0.516       0.730
+community_income  2.995e-06   9.21e-07      3.251      0.001    1.19e-06     4.8e-06
+==============================================================================
+Omnibus:                      863.290   Durbin-Watson:                   1.345
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             1899.855
+Skew:                           1.560   Prob(JB):                         0.00
+Kurtosis:                       5.144   Cond. No.                     1.60e+05
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 1.6e+05. This might indicate that there are
+strong multicollinearity or other numerical problems.
+```
+
+## Star rating step-down by readmission failure count
+
+```text
+readmit_fail_count
+0.0    3.52
+1.0    3.15
+2.0    2.81
+3.0    2.44
+4.0    2.42
+5.0    1.94
+6.0    1.50
+7.0    1.00
+```

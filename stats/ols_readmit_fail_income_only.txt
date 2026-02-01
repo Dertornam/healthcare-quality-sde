@@ -1,0 +1,27 @@
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:     readmit_fail_count   R-squared:                       0.003
+Model:                            OLS   Adj. R-squared:                  0.003
+Method:                 Least Squares   F-statistic:                     10.57
+Date:                Sun, 01 Feb 2026   Prob (F-statistic):            0.00116
+Time:                        04:42:10   Log-Likelihood:                -4920.4
+No. Observations:                3181   AIC:                             9845.
+Df Residuals:                    3179   BIC:                             9857.
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+====================================================================================
+                       coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------------
+const                0.6232      0.054     11.435      0.000       0.516       0.730
+community_income  2.995e-06   9.21e-07      3.251      0.001    1.19e-06     4.8e-06
+==============================================================================
+Omnibus:                      863.290   Durbin-Watson:                   1.345
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             1899.855
+Skew:                           1.560   Prob(JB):                         0.00
+Kurtosis:                       5.144   Cond. No.                     1.60e+05
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 1.6e+05. This might indicate that there are
+strong multicollinearity or other numerical problems.
