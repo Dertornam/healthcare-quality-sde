@@ -22,6 +22,7 @@ layout: default
 </style>
 
 <div style="margin: 1rem 0;">
+  <a class="port-btn" href="{{ '/executive-summary' | relative_url }}">Executive Summary</a>
   <a class="port-btn" href="{{ '/statistical-tables' | relative_url }}">Statistical Tables</a>
   <a class="port-btn" href="{{ '/datasets' | relative_url }}">Datasets</a>
   <a class="port-btn" href="{{ '/sql-and-syntaxes' | relative_url }}">SQL & Syntax</a>
