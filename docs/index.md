@@ -42,11 +42,11 @@ layout: default
 ---
 
 ## Introduction & Project Objective
-The goal of this project was to determine if hospital performance—specifically overall star ratings and readmission failures—is driven by internal operational efficiency or external socio-economic factors. We aimed to answer the “So What?” for hospital administrators: Are poor ratings a failure of medicine or a reflection of community poverty?
+The goal of this project was to determine if hospital performance—specifically overall star ratings and readmission failures—is driven by internal operational efficiency or external socio-economic factors. I aimed to answer the “So What?” for hospital administrators: Are poor ratings a failure of medicine or a reflection of community poverty?
 
 ## Methodology
-**Data Acquisition:** Data was extracted from Google BigQuery Public Datasets. We utilized the cms_medicare.hospital_general_info table for clinical/operational data and the census_bureau_acs.zip_codes_2017_5yr table for socio-economic metrics.  
-**Data Engineering:** A SQL INNER JOIN was performed on the zip_code field. We utilized SAFE_CAST to transform clinical strings (e.g., “Better than Average”) into quantitative counts (readmission_measures_worse_count) and cleaned the dataset by removing “Not Available” entries.  
+**Data Acquisition:** Data was extracted from Google BigQuery Public Datasets. I utilized the cms_medicare.hospital_general_info table for clinical/operational data and the census_bureau_acs.zip_codes_2017_5yr table for socio-economic metrics.  
+**Data Engineering:** A SQL INNER JOIN was performed on the zip_code field. I utilized SAFE_CAST to transform clinical strings (e.g., “Better than Average”) into quantitative counts (readmission_measures_worse_count) and cleaned the dataset by removing “Not Available” entries.  
 **Statistical Framework:**  
 **ANOVA:** To test variance in quality across hospital ownership types.  
 **Chi-Square:** To test the association between income levels and star ratings.  
@@ -120,5 +120,52 @@ The population coefficient (1.381e-05 per person) sounds abstract until you scal
 
 That translates well to operations language. Bigger catchment areas tend to mean more handoffs, more fragmented outpatient follow-up, more transportation constraints, and more variability in caregiver support, which can make readmission prevention harder even when inpatient care is strong.
 
-## Portfolio-Ready Reproducibility Add-On (Based on What You Already Built)
-Your current report is already “executive readable,” and the visuals reinforce it. The strongest next addition for a portfolio reviewer is a short reproducibility appendix that ties artifacts together end-to-end.
+## Contact & Links
+
+<div class="contact-links">
+   <a class="port-btn"
+     href="https://www.linkedin.com/in/derrick-dzormeku-mba-75288644"
+     target="_blank" rel="noopener">
+    LinkedIn
+  </a>
+   
+   <a class="port-btn"
+     href="https://mail.google.com/mail/?view=cm&fs=1&to=d.double76@icloud.com&su=Portfolio%20inquiry%20%E2%80%93%20Derrick%20Dzormeku&body=Hi%20Derrick,%0D%0A%0D%0AI%27m%20reaching%20out%20about%20your%20analytics%20portfolio.%20Could%20we%20schedule%20a%20brief%20call%3F"
+     target="_blank" rel="noopener">
+    Email
+  </a>
+  
+  <a class="port-btn"
+     href="https://dertornam.github.io/higher-ed-analytics-portfolio/"
+     target="_blank" rel="noopener">
+    Main Portfolio
+  </a>
+</div>
+
+<style>
+.contact-links {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.port-btn {
+  display: inline-block;
+  background: #0066cc;
+  color: #ffffff !important;
+  padding: 0.75rem 1.75rem;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.port-btn:hover {
+  background: #0053a6;
+}
+</style>
+
+
+This project is designed as a portfolio.
