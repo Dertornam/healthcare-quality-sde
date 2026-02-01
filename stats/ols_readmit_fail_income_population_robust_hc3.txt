@@ -4,7 +4,7 @@ Dep. Variable:     readmit_fail_count   R-squared:                       0.044
 Model:                            OLS   Adj. R-squared:                  0.043
 Method:                 Least Squares   F-statistic:                     67.20
 Date:                Sun, 01 Feb 2026   Prob (F-statistic):           2.59e-29
-Time:                        04:42:10   Log-Likelihood:                -4854.0
+Time:                        05:07:48   Log-Likelihood:                -4854.0
 No. Observations:                3181   AIC:                             9714.
 Df Residuals:                    3178   BIC:                             9732.
 Df Model:                           2                                         

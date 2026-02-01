@@ -1,36 +1,20 @@
-[Home](./) | [Statistical tables](statistical-tables) | [Datasets](datasets) | [SQL & syntaxes](sql-and-syntaxes) | [Data dictionary](data-dictionary) | [Reproducibility](reproducibility)
-
-
 # Data dictionary
 
-This dictionary focuses on engineered fields and analysis-ready variables.
+This dictionary documents the engineered fields used in the analysis.
 
-## Engineered fields (copy/paste from your BigQuery logic)
+| Field Name | Type | Description | Engineering Logic |
+|---|---:|---|---|
+| `star_rating` | INT64 | The overall quality score (1–5) of the hospital. | `SAFE_CAST` used to convert string labels into integers for ANOVA. |
+| `readmit_success_count` | INT64 | Number of clinical measures where the hospital performed better than the national average. | Aggregated count converted from string to INT for correlation. |
+| `readmit_fail_count` | INT64 | Number of clinical measures where the hospital performed worse than the national average. | Targeted metric for Regression analysis; converted via `SAFE_CAST`. |
+| `community_income` | FLOAT64 | Median household income for the hospital’s primary service Zip Code. | Joined from Census Bureau ACS data to represent SDE. |
+| `community_population` | INT64 | Total population of the Zip Code. | Used as a control variable in Multiple Regression. |
 
-Field: `readmit_success_count`
-Definition: Count of readmission measures that are “better than national” (or your equivalent category).
-Source: Engineered from CMS readmission measure strings in BigQuery using `SAFE_CAST` and conditional logic.
-Exact logic: Paste the verbatim expression in `sql-and-syntaxes.md` so a reviewer can reproduce your counts.
+## SAFE_CAST logic used for the readmission counts
 
-Field: `readmit_fail_count`
-Definition: Count of readmission measures that are “worse than national” (or your equivalent category).
-Source: Engineered from CMS readmission measure strings in BigQuery using `SAFE_CAST` and conditional logic.
-Exact logic: Paste the verbatim expression in `sql-and-syntaxes.md` so a reviewer can reproduce your counts.
+The analysis relies on the CMS-provided readmission count fields and converts them into numerical form:
 
-Field: `community_income`
-Definition: Median community income for the ZIP code.
-Source: `census_bureau_acs.zip_codes_2017_5yr`
-
-Field: `community_population`
-Definition: Community population for the ZIP code.
-Source: `census_bureau_acs.zip_codes_2017_5yr`
-
-## Analysis fields (derived in Python)
-
-Field: `income_group`
-Definition: Median split of `community_income`.
-Logic: High income if income >= median; otherwise Low income.
-
-Field: `star_group`
-Definition: Binary grouping of star ratings.
-Logic: 4–5 stars vs 1–3 stars.
+```sql
+SAFE_CAST(h.readmission_measures_better_count AS INT64) as readmit_success_count,
+SAFE_CAST(h.readmission_measures_worse_count  AS INT64) as readmit_fail_count
+```

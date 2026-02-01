@@ -1,16 +1,11 @@
-Chi-square: income_group x star_group
-
-Income median split (median income = 49514)
+Chi-square: Income group × Rating group
 
 Contingency table:
-star_group    1-3 stars  4-5 stars
+rating_group  1-3 Stars  4-5 Stars
 income_group                      
-High income         766        825
-Low income         1041        550
+High                766        825
+Low                1040        550
 
-Chi-square statistic: 96.1480
-Degrees of freedom: 1
-p-value: 1.066062e-22
-
-Odds ratio (High vs Low for 4-5 stars): 2.0385
-95% CI: [1.7675, 2.3510]
+chi2: 95.8679
+dof: 1
+p-value: 0.0000

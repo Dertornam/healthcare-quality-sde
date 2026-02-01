@@ -1,12 +1,10 @@
----
-title: Socio-Economic Determinants of Healthcare Quality
-layout: default
----
-
 [Home](./) | [Statistical tables](statistical-tables) | [Datasets](datasets) | [SQL & syntaxes](sql-and-syntaxes) | [Data dictionary](data-dictionary) | [Reproducibility](reproducibility)
----
 
-**Tools: Google BigQuery (SQL), Python (Pandas, Scipy, Statsmodels, Seaborn)
+
+Project Report: Socio-Economic Determinants of Healthcare Quality
+Prepared by: Data Analyst Portfolio Project
+Date: February 1, 2026
+Tools: Google BigQuery (SQL), Python (Pandas, Scipy, Statsmodels, Seaborn)
 	1.	Introduction & Project Objective
 The goal of this project was to determine if hospital performance—specifically overall star ratings and readmission failures—is driven by internal operational efficiency or external socio-economic factors. We aimed to answer the “So What?” for hospital administrators: Are poor ratings a failure of medicine or a reflection of community poverty?
 	2.	Methodology

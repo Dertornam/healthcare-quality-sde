@@ -1,10 +1,7 @@
-ANOVA: star_rating by hospital_type (Acute Care vs Critical Access)
+ANOVA: Star rating by hospital type
 
-Group means:
-- Acute Care Hospitals: 3.2494
-- Critical Access Hospitals: 3.2311
+Groups (hospital_type): Acute Care Hospitals, Critical Access Hospitals
+F-statistic: 0.1123
+p-value: 0.7376
 
-F-statistic: 0.1112
-p-value: 0.7388
-n (Acute Care): 2706
-n (Critical Access): 476
+Decision (alpha=0.05): Fail to reject H0
