@@ -139,7 +139,7 @@ That translates well to operations language. Bigger catchment areas tend to mean
   <a class="port-btn"
      href="https://dertornam.github.io/higher-ed-analytics-portfolio/"
      target="_blank" rel="noopener">
-    Main Portfolio
+    Other Portfolios
   </a>
   <a class="port-btn" href="{{ '/resume.pdf' | relative_url }}">View Resume</a>
 </div>
