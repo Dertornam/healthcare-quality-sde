@@ -3,7 +3,7 @@
 layout: default
 ---
 
-### **Tools:** Google BigQuery (SQL), Python (Pandas, Scipy, Statsmodels, Seaborn)
+**Tools:** Google BigQuery (SQL), Python (Pandas, Scipy, Statsmodels, Seaborn)
 
 <style>
 .port-btn{
