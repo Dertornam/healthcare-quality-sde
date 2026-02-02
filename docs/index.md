@@ -1,5 +1,5 @@
 ---
-## title: Socio-Economic Determinants of Healthcare Quality
+title: Socio-Economic Determinants of Healthcare Quality
 layout: default
 ---
 
