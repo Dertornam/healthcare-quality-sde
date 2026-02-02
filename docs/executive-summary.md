@@ -1,5 +1,5 @@
 ---
-title: Executive Summary — Socio-Economic Determinants of Healthcare Quality
+title: Executive Summary
 layout: default
 ---
 
