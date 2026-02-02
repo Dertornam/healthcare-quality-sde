@@ -141,6 +141,7 @@ That translates well to operations language. Bigger catchment areas tend to mean
      target="_blank" rel="noopener">
     Main Portfolio
   </a>
+  <a class="port-btn" href="{{ '/resume.pdf' | relative_url }}">View Resume</a>
 </div>
 
 <style>
